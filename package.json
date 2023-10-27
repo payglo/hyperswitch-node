@@ -1,9 +1,9 @@
 {
-  "name": "@payglo/hyperswitch-node",
-  "version": "1.0.3",
+  "name": "@payglo/payglo-node",
+  "version": "1.0.4",
   "author": "",
   "bugs": {
-    "url": "https://github.com/payglo/hyperswitch-node.git/issues"
+    "url": "https://github.com/payglo/payglo-node.git/issues"
   },
   "dependencies": {
     "@types/node": ">=8.1.0",
@@ -31,7 +31,7 @@
   "engines": {
     "node": "^8.1 || >=10.*"
   },
-  "homepage": "https://github.com/payglo/hyperswitch-node.git",
+  "homepage": "https://github.com/payglo/payglo-node.git",
   "keywords": [
     "stripe",
     "payment processing",
@@ -42,7 +42,7 @@
   "main": "lib/stripe.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:payglo/hyperswitch-node.git"
+    "url": "git@github.com:payglo/payglo-node.git"
   },
   "resolutions": {
     "ansi-regex": "5.0.1",
