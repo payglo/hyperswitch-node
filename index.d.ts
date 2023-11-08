@@ -1,1 +1,1 @@
-declare module '@payglo/hyper-node';
+declare module '@payglo/payglo-node';

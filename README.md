@@ -1,13 +1,13 @@
-**Note** : This is originally stripe Node.js Library, it has been modified to communicate with to `hyper`'s servers. Stripe node library's documentation is applicable for this library also, just make sure you import the library as '@juspay-tech/hyper-node' instead of 'stripe' and use api key  provided by `hyper`.
+**Note** : This is originally stripe Node.js Library, it has been modified to communicate with to `payglo`'s servers. Stripe node library's documentation is applicable for this library also, just make sure you import the library as '@payglo/payglo-node' instead of 'stripe' and use api key  provided by `payglo`.
 
 ## Installation
 
 Install the package with:
 
 ```sh
-npm install @juspay-tech/hyper-node --save
+npm install @payglo/payglo-node --save
 # or
-yarn add @juspay-tech/hyper-node
+yarn add @payglo/payglo-node
 ```
 
 
@@ -59,7 +59,7 @@ value:
 
 <!-- prettier-ignore -->
 ```js
-const stripe = require('@juspay-tech/hyper-node')('<hyper_api_key>');
+const stripe = require('@payglo/payglo-node')('<payglo_api_key>');
 
 stripe.customers.create({
   email: 'customer@example.com',
@@ -71,8 +71,8 @@ stripe.customers.create({
 Or using ES modules and `async`/`await`:
 
 ```js
-import Stripe from '@juspay-tech/hyper-node';
-const stripe = new Stripe('<hyper_api_key>');
+import Stripe from '@payglo/payglo-node';
+const stripe = new Stripe('<payglo_api_key>');
 
 (async () => {
   const customer = await stripe.customers.create({
@@ -91,8 +91,8 @@ Import Stripe as a default import (not `* as Stripe`, unlike the DefinitelyTyped
 and instantiate it as `new Stripe()` with the latest API version.
 
 ```ts
-import Stripe from '@juspay-tech/ocra-node';
-const stripe = new Stripe('<hyper_api_key>', {
+import Stripe from '@payglo/ocra-node';
+const stripe = new Stripe('<payglo_api_key>', {
   apiVersion: '2022-08-01',
 });
 
@@ -185,7 +185,7 @@ The package can be initialized with several options:
 ```js
 import ProxyAgent from 'https-proxy-agent';
 
-const stripe = Stripe('<hyper_api_key>', {
+const stripe = Stripe('<payglo_api_key>', {
   apiVersion: '2019-08-08',
   maxNetworkRetries: 1,
   httpAgent: new ProxyAgent(process.env.http_proxy),
@@ -214,7 +214,7 @@ Note: Both `maxNetworkRetries` and `timeout` can be overridden on a per-request 
 Timeout can be set globally via the config object:
 
 ```js
-const stripe = Stripe('<hyper_api_key>', {
+const stripe = Stripe('<payglo_api_key>', {
   timeout: 20 * 1000, // 20 seconds
 });
 ```
@@ -257,7 +257,7 @@ To use stripe behind a proxy you can pass an [https-proxy-agent][https-proxy-age
 if (process.env.http_proxy) {
   const ProxyAgent = require('https-proxy-agent');
 
-  const stripe = Stripe('<hyper_api_key>', {
+  const stripe = Stripe('<payglo_api_key>', {
     httpProxy: new ProxyAgent(process.env.http_proxy),
   });
 }
@@ -270,7 +270,7 @@ This will retry requests `n` times with exponential backoff if they fail due to 
 [Idempotency keys](https://stripe.com/docs/api/idempotent_requests) are added where appropriate to prevent duplication.
 
 ```js
-const stripe = Stripe('<hyper_api_key>', {
+const stripe = Stripe('<payglo_api_key>', {
   maxNetworkRetries: 2, // Retry a request twice before giving up
 });
 ```
@@ -303,7 +303,7 @@ customer.lastResponse.statusCode;
 The Stripe object emits `request` and `response` events. You can use them like this:
 
 ```js
-const stripe = require('stripe')('<hyper_api_key>');
+const stripe = require('stripe')('<payglo_api_key>');
 
 const onRequest = (request) => {
   // Do something.
@@ -391,7 +391,7 @@ expect(event.id).to.equal(payload.id);
 If you're writing a plugin that uses the library, we'd appreciate it if you instantiated your stripe client with `appInfo`, eg;
 
 ```js
-const stripe = require('stripe')('<hyper_api_key>', {
+const stripe = require('stripe')('<payglo_api_key>', {
   appInfo: {
     name: 'MyAwesomePlugin',
     version: '1.2.34', // Optional
@@ -488,7 +488,7 @@ numbers help Stripe improve the overall latency of its API for all users.
 You can disable this behavior if you prefer:
 
 ```js
-const stripe = new Stripe('<hyper_api_key>', {
+const stripe = new Stripe('<payglo_api_key>', {
   telemetry: false,
 });
 ```
@@ -536,7 +536,7 @@ If you wish, you may run tests using your Stripe _Test_ API key by setting the
 environment variable `STRIPE_TEST_API_KEY` before running the tests:
 
 ```bash
-$ export STRIPE_TEST_API_KEY='<hyper_api_key>'
+$ export STRIPE_TEST_API_KEY='<payglo_api_key>'
 $ yarn test
 ```
 
